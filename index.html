@@ -6,7 +6,7 @@
     <title>Palwasha Mir | Graphic Designer & Brand Strategist</title>
     <!-- Google Fonts Matching Portfolio Style -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons for Exact Symbols -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -37,7 +37,6 @@
             overflow-x: hidden;
         }
 
-        /* Subtle Background Glows matching portfolio vibe */
         .bg-glow-1 {
             position: fixed;
             top: -150px;
@@ -58,7 +57,6 @@
             z-index: -1;
         }
 
-        /* Fixed Navigation Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -103,7 +101,6 @@
             color: var(--accent-cyan);
         }
 
-        /* Section Setup */
         section {
             padding: 120px 8% 60px;
             min-height: 85vh;
@@ -132,7 +129,6 @@
             color: #ffffff;
         }
 
-        /* Modern Gradient Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -182,7 +178,6 @@
             border-color: var(--accent-cyan);
         }
 
-        /* PAGE 1: HERO */
         .hero-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 52px;
@@ -204,7 +199,6 @@
             margin-bottom: 25px;
         }
 
-        /* PAGE 2: ABOUT */
         .about-card {
             background: var(--card-bg);
             border: 1px solid var(--border-line);
@@ -213,42 +207,108 @@
             box-shadow: var(--card-glow);
         }
 
-        /* PAGE 3: FEATURED MAKAV PROJECT */
-        .project-wrapper {
+        /* PROMINENT MAIN PROJECT STYLING */
+        .featured-hero-project {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.05), rgba(17, 24, 39, 0.9));
+            border: 2px solid var(--accent-cyan);
+            border-radius: 24px;
+            padding: 35px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 35px;
             align-items: center;
-            background: var(--card-bg);
-            border: 1px solid var(--border-line);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--card-glow);
+            box-shadow: 0 15px 40px rgba(0, 242, 254, 0.2);
+            margin-bottom: 50px;
+            position: relative;
         }
 
-        .project-img-box {
+        .hero-badge {
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            color: #0b0f19;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .main-project-img-box {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             background: #ffffff;
-            padding: 15px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        .project-img-box img {
+        .main-project-img-box img {
             width: 100%;
-            height: auto;
+            max-height: 400px;
+            object-fit: contain;
             border-radius: 8px;
             transition: transform 0.4s ease;
         }
 
-        .project-img-box:hover img {
-            transform: scale(1.03);
+        .main-project-img-box:hover img {
+            transform: scale(1.04);
         }
 
-        /* PAGE 4: LOGO & CHARACTER STRUCTURE */
+        /* SECONDARY GALLERY (3 AUTO ADDED PICS) */
+        .secondary-gallery-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .secondary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .secondary-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-line);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-5px);
+        }
+
+        .secondary-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .secondary-card-info {
+            padding: 15px;
+        }
+
+        .secondary-card-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .secondary-card-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -290,7 +350,6 @@
             letter-spacing: 1px;
         }
 
-        /* PAGE 5: SERVICES */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -327,7 +386,6 @@
             color: var(--text-muted);
         }
 
-        /* PAGE 6: CONTACT */
         .contact-card {
             text-align: center;
             background: var(--card-bg);
@@ -345,11 +403,14 @@
             border-top: 1px solid var(--border-line);
         }
 
-        /* Responsive Fixes */
+        @media (max-width: 900px) {
+            .featured-hero-project { grid-template-columns: 1fr; }
+            .secondary-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 768px) {
             nav ul { display: none; }
             .hero-title { font-size: 36px; }
-            .project-wrapper { grid-template-columns: 1fr; }
             .grid-3 { grid-template-columns: 1fr; }
             section { padding: 100px 6% 40px; }
         }
@@ -360,7 +421,6 @@
     <div class="bg-glow-1"></div>
     <div class="bg-glow-2"></div>
 
-    <!-- Navigation Header -->
     <header>
         <div class="brand-logo">PALWASHA<span>MIR</span></div>
         <nav>
@@ -396,21 +456,50 @@
         </div>
     </section>
 
-    <!-- PAGE 3: FEATURED MAKAV BRANDING -->
+    <!-- PAGE 3: BRANDING PORTFOLIO (YOUR MAKAV PROJECT IS PROMINENT + 3 EXTRA WORKS) -->
     <section id="branding">
-        <div class="section-tag"><i class="fa-solid fa-star"></i> Featured Project</div>
-        <h2 class="section-title">3D Embossed Luxury Mark</h2>
+        <div class="section-tag"><i class="fa-solid fa-star"></i> Featured Portfolio</div>
+        <h2 class="section-title">Brand Identity Showcase</h2>
         
-        <div class="project-wrapper">
-            <div class="project-img-box">
-                <!-- Replace with your uploaded image file name -->
+        <!-- YOUR MAIN MAKAV LOGO (HIGHLIGHTED PROMINENTLY) -->
+        <div class="featured-hero-project">
+            <div class="hero-badge">⭐ Primary Flagship Project</div>
+            <div class="main-project-img-box">
                 <img src="embossed png.jpeg" alt="MAKAV 3D Gymnastics Embossed Logo">
             </div>
             <div>
-                <h3 style="font-size: 26px; font-weight: 700; margin-bottom: 12px;">MAKAV Brand Identity</h3>
-                <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">A masterclass in 3D paper-embossed luxury aesthetics. This mark seamlessly incorporates custom typography with a high-flexibility gymnast character pose integrated into a minimalist circle.</p>
+                <h3 style="font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 12px;">MAKAV 3D Brand Identity</h3>
+                <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 20px;">A masterclass in 3D paper-embossed luxury aesthetics. This signature mark seamlessly incorporates custom typography with a high-flexibility gymnast character pose inside a minimalist circle.</p>
                 <div class="btn-group">
-                    <a href="#contact" class="btn-primary"><i class="fa-solid fa-pen-nib"></i> Order Custom Logo</a>
+                    <a href="#contact" class="btn-primary"><i class="fa-solid fa-pen-nib"></i> Request Similar Design</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 SECONDARY SUPPORTING DESIGN PROJECTS -->
+        <h3 class="secondary-gallery-title">More Creative Works</h3>
+        <div class="secondary-grid">
+            <div class="secondary-card">
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=600&q=80" alt="3D Packaging Concept">
+                <div class="secondary-card-info">
+                    <h4>Luxury Packaging Render</h4>
+                    <p>Minimalist eco-box 3D render</p>
+                </div>
+            </div>
+
+            <div class="secondary-card">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Social Media Graphics">
+                <div class="secondary-card-info">
+                    <h4>Social Media Campaign</h4>
+                    <p>High-converting aesthetic posts</p>
+                </div>
+            </div>
+
+            <div class="secondary-card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Corporate Branding">
+                <div class="secondary-card-info">
+                    <h4>Corporate Identity Guide</h4>
+                    <p>Typography & stationery suite</p>
                 </div>
             </div>
         </div>
